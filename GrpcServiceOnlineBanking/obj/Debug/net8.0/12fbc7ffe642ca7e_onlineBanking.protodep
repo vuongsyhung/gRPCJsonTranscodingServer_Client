@@ -1,0 +1,5 @@
+obj\Debug\net8.0\Protos/OnlineBanking.cs \
+obj\Debug\net8.0\Protos/OnlineBankingGrpc.cs: C:/Users/vuong/.nuget/packages/microsoft.aspnetcore.grpc.jsontranscoding/8.0.7/content/protos/google/api/http.proto\
+ C:/Users/vuong/.nuget/packages/grpc.tools/2.65.0/build/native/include/google/protobuf/descriptor.proto\
+ C:/Users/vuong/.nuget/packages/microsoft.aspnetcore.grpc.jsontranscoding/8.0.7/content/protos/google/api/annotations.proto\
+ Protos/onlineBanking.proto

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7FWccGPopQlP6UJnST3Vdnv3sSfs6JgvOdJpLzgCmu4=",
+  "Source": "GrpcServiceOnlineBanking",
+  "BasePath": "_content/GrpcServiceOnlineBanking",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,114 @@
+syntax = "proto3";
+import "google/api/annotations.proto";
+
+option csharp_namespace = "GrpcServiceOnlineBanking.Protos";
+
+package onlineBanking;
+
+// The online banking  service definition.
+service OnlineBanking {
+
+ // Create
+    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {
+       option (google.api.http) = {
+       post: "/api/customers",
+       body : "*"
+    };
+    }
+
+    // Read single
+    rpc ReadCustomer(ReadCustomerRequest) returns (ReadCustomerResponse) {
+       option (google.api.http) = {
+       get: "/api/customers/{CustomerId}"
+    };
+    }
+
+    // Read list
+    rpc GetAllCustomers(GetAllCustomerRequest) returns (GetAllCustomerResponse) {
+       option (google.api.http) = {
+       get: "/api/customers"
+    };
+    }
+
+    // Update
+    rpc UpdateCustomer (UpdateCustomerRequest) returns (UpdateCustomerResponse) {
+      option (google.api.http) = {
+       put: "/api/customers/{CustomerId}",
+       body :"*"
+    };
+    }
+
+    // Delete
+    rpc DeleteCustomer (DeleteCustomerRequest) returns (DeleteCustomerResponse) {
+        option (google.api.http) = {
+        delete: "/api/customers/{CustomerId}"
+    };
+    }
+}
+
+message CreateCustomerRequest {
+ string FirstName = 1;
+ string LastName = 2;
+ string DateOfBirth = 3;
+ string Email = 4;
+ string StreesAddress = 5;
+ string City = 6;
+ string State = 7;
+ int32 ZipCode = 8;
+ string Country = 9;
+ string Sex = 10;
+}
+
+message CreateCustomerResponse {
+ int32 CustomerId = 1; 
+}
+
+message ReadCustomerRequest {
+    int32 CustomerId = 1;
+}
+
+message ReadCustomerResponse {
+ int32 CustomerId = 1;
+ string FirstName = 2;
+ string LastName = 3;
+ string DateOfBirth = 4;
+ string Email = 5;
+ string StreesAddress = 6;
+ string City = 7;
+ string State = 8;
+ int32 ZipCode = 9;
+ string Country = 10;
+ string Sex = 11;
+}
+
+message GetAllCustomerRequest {}
+
+message GetAllCustomerResponse {
+    repeated ReadCustomerResponse customers = 1;
+}
+
+message UpdateCustomerRequest {
+ int32 CustomerId = 1;
+ string FirstName = 2;
+ string LastName = 3;
+ string DateOfBirth = 4;
+ string Email = 5;
+ string StreesAddress = 6;
+ string City = 7;
+ string State = 8;
+ int32 ZipCode = 9;
+ string Country = 10;
+ string Sex = 11;
+}
+  
+message UpdateCustomerResponse {
+    int32 CustomerId = 1;
+}
+  
+message DeleteCustomerRequest {
+    int32 CustomerId = 1;
+}
+  
+message DeleteCustomerResponse {
+    int32 CustomerId = 1;
+}
